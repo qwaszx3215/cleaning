@@ -449,14 +449,15 @@ export const Testimonials = () => {
           <List
             w={["90%", "90%", "40%", "40%"]}
             spacing={6}
-            fontSize="12px"
+            fontSize="14px"
             fontWeight="300"
             color="white"
             mt="-110px"
+            mb="60px"
             pb="100px"
           >
             <Scroll4>
-              <ListItem display="flex">
+              <ListItem display="flex" mt="50px">
                 <GoQuote size="40px" color="#724e3f" />
                 <p style={{ marginTop: "20px" }}>
                   Matt Cadwell helped me finish a long time case I’ve been
