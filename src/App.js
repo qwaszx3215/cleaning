@@ -555,7 +555,10 @@ export const Book = () => {
       <Heading size="sm" color="#724e3f">
         FILL OUT THE FORM BELOW FOR A NO-OBLIGATION REVIEW OF YOUR CASE
       </Heading>
-      <Box display="flex" justifyContent="space-between">
+      <Box
+        display={["grid", "grid", "flex", "flex"]}
+        justifyContent="space-between"
+      >
         <Input
           isRequired
           type="text"
@@ -573,7 +576,10 @@ export const Book = () => {
           m="30px"
         />
       </Box>
-      <Box display="flex" justifyContent="space-between">
+      <Box
+        display={["grid", "grid", "flex", "flex"]}
+        justifyContent="space-between"
+      >
         <Input
           isRequired
           type="text"
