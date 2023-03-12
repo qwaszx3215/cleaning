@@ -424,7 +424,7 @@ export const Testimonials = () => {
   return (
     <>
       <Box
-        p="80px"
+        p={["10px", "10px", "80px", "80px"]}
         pt="40px"
         bg="#b4816b"
         color="white"
