@@ -35,26 +35,28 @@ import Scroll4 from "./component/Scroll/Scroll4";
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
-      <Home />
-      <Scroll4>
-        <div id="service">
-          <Service />
+      <div style={{ width: "100%" }}>
+        <NavBar />
+        <Home />
+        <Scroll4>
+          <div id="service">
+            <Service />
+          </div>
+        </Scroll4>
+
+        <div id="profile">
+          <Profile />
         </div>
-      </Scroll4>
 
-      <div id="profile">
-        <Profile />
-      </div>
-
-      <div id="testimony">
-        <Testimonials />
-      </div>
-      <div id="book">
-        <Book />
-      </div>
-      <div id="contact">
-        <Contact />
+        <div id="testimony">
+          <Testimonials />
+        </div>
+        <div id="book">
+          <Book />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
       </div>
     </BrowserRouter>
   );
@@ -559,7 +561,7 @@ export const Book = () => {
         variant="filled"
         name="message"
         placeholder="description of your case"
-        m="30px"
+        mb="30px"
         w="95%"
       />
       <Box textAlign="center">
