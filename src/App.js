@@ -76,8 +76,8 @@ export const Home = () => {
           w={["400px", "400px", "70%", "70%"]}
           p={["10px", "10px", "100px", "100px"]}
           pt={["150px", "150px", "100px", "100px"]}
-          fontSize={["15px", "15px", "25px", "25px"]}
-          mt="60px"
+          fontSize={["22px", "22px", "25px", "25px"]}
+          mt="20px"
         >
           <b>
             <Scroll6>
