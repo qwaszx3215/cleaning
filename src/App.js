@@ -32,9 +32,46 @@ import {
 import { BrowserRouter } from "react-router-dom";
 import Scroll6 from "./component/Scroll/scroll6";
 import Scroll4 from "./component/Scroll/Scroll4";
+import { useState, useEffect } from "react";
+import { BsArrowUpCircleFill } from "react-icons/bs";
 function App() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+    // eslint-disable-next-line
+  }, [scrolled]);
+
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset;
+    if (scrollTop > 0 && !scrolled) {
+      setScrolled(true);
+    } else if (scrollTop === 0 && scrolled) {
+      setScrolled(false);
+    }
+  };
+
+  const scrollTop = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <BrowserRouter>
+      <div style={{ position: "fixed", bottom: 25, right: 25 }}>
+        {scrolled ? (
+          <Button
+            as={IconButton}
+            aria-label="Options"
+            icon={<BsArrowUpCircleFill />}
+            bg="#b4816b"
+            color="white"
+            onClick={scrollTop}
+          ></Button>
+        ) : (
+          ""
+        )}
+      </div>
       <div style={{ width: "100%" }}>
         <NavBar />
         <Home />
@@ -522,7 +559,7 @@ export const Book = () => {
         <Input
           isRequired
           type="text"
-          variant="filled"
+          variant="flushed"
           placeholder="First Name"
           m="30px"
           name="name"
@@ -530,7 +567,7 @@ export const Book = () => {
         <Input
           type="email"
           isRequired
-          variant="filled"
+          variant="flushed"
           placeholder="Last Name"
           name="email"
           m="30px"
@@ -540,7 +577,7 @@ export const Book = () => {
         <Input
           isRequired
           type="text"
-          variant="filled"
+          variant="flushed"
           placeholder="Phone Number"
           m="30px"
           name="name"
@@ -548,7 +585,7 @@ export const Book = () => {
         <Input
           type="email"
           isRequired
-          variant="filled"
+          variant="flushed"
           placeholder="EMAIL ADDRESS"
           name="email"
           m="30px"
@@ -558,7 +595,7 @@ export const Book = () => {
       <Textarea
         type="text"
         isRequired
-        variant="filled"
+        variant="flushed"
         name="message"
         placeholder="description of your case"
         mb="30px"
