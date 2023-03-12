@@ -16,7 +16,7 @@ function Scroll2({ children }) {
             y: "100px",
             transition: {
               type: "spring",
-              stiffness: 20,
+              stiffness: 8,
               damping: 5,
             },
           },

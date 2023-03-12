@@ -30,18 +30,18 @@ import {
   MdOutlineGavel,
 } from "react-icons/md";
 import { BrowserRouter } from "react-router-dom";
-import Scroll3 from "./component/Scroll/Scroll3";
+import Scroll6 from "./component/Scroll/scroll6";
 import Scroll4 from "./component/Scroll/Scroll4";
 function App() {
   return (
     <BrowserRouter>
       <NavBar />
       <Home />
-      <Scroll3>
+      <Scroll4>
         <div id="service">
           <Service />
         </div>
-      </Scroll3>
+      </Scroll4>
 
       <div id="profile">
         <Profile />
@@ -73,21 +73,20 @@ export const Home = () => {
       <Box display={["grid", "grid", "flex", "flex"]} color="white">
         <Box
           m="auto"
-          w={["100%", "100%", "70%", "70%"]}
-          p={["50px", "50px", "100px", "100px"]}
+          w={["400px", "400px", "70%", "70%"]}
+          p={["10px", "10px", "100px", "100px"]}
           pt={["150px", "150px", "100px", "100px"]}
           fontSize={["15px", "15px", "25px", "25px"]}
+          mt="60px"
         >
           <b>
-            <Scroll3>
-              <p style={{ marginLeft: "70px" }}>
-                MORGAN & ASSOCIATES is a highly reputable law firm that
-                specializes in highly complex immigration cases, Bankruptcy,
-                Criminal Law, Divorce and Family and more. They have attorneys
-                in three New York City locations, and their attorneys are
-                licensed to practice immigration law in all 50 U.S. states.{" "}
-              </p>
-            </Scroll3>
+            <Scroll6>
+              MORGAN & ASSOCIATES is a highly reputable law firm that
+              specializes in highly complex immigration cases, Bankruptcy,
+              Criminal Law, Divorce and Family and more. They have attorneys in
+              three New York City locations, and their attorneys are licensed to
+              practice immigration law in all 50 U.S. states.{" "}
+            </Scroll6>
           </b>
         </Box>
         <Box m="auto" w="30%" d={["none", "none", "grid", "grid"]}></Box>
@@ -97,12 +96,12 @@ export const Home = () => {
 };
 export const Service = () => {
   return (
-    <Box m="60px" ml="180px">
+    <Box m="60px" mt="-80px" pb="80px">
       <Heading size="lg" mb="30px">
         Full-service legal solutions
       </Heading>
       <Box display="flex" justifyContent="space-between" flexWrap="wrap">
-        <Box w="400px" mb="20px">
+        <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
           <SiWorldhealthorganization size="40px" />
           <Text color="gray" fontSize="17px" mt="20px">
             <b> Immigration Cases</b>
@@ -115,7 +114,7 @@ export const Service = () => {
             documentation
           </Text>
         </Box>
-        <Box w="400px" mb="20px">
+        <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
           <BsBank2 size="40px" />
           <Text color="gray" fontSize="17px" mt="20px">
             <b> Bankruptcy</b>
@@ -128,7 +127,7 @@ export const Service = () => {
             documentation
           </Text>
         </Box>
-        <Box w="400px" mb="20px">
+        <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
           <GiInjustice size="40px" />
           <Text color="gray" fontSize="17px" mt="20px">
             <b> Criminal Law</b>
@@ -141,7 +140,7 @@ export const Service = () => {
             clients throughout the criminal justice process
           </Text>
         </Box>
-        <Box w="400px" mb="20px">
+        <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
           <MdFamilyRestroom size="40px" />
           <Text color="gray" fontSize="17px" mt="20px">
             <b>Divorce and Family Cases</b>
@@ -153,7 +152,7 @@ export const Service = () => {
             and protection to clients throughout the legal process
           </Text>
         </Box>
-        <Box w="400px" mb="20px">
+        <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
           <MdOutlineGavel size="40px" />
           <Text color="gray" fontSize="17px" mt="20px">
             <b>Arbitration and Mediation </b>
@@ -165,7 +164,7 @@ export const Service = () => {
             to clients throughout the mediation or arbitration process.
           </Text>
         </Box>
-        <Box w="400px" mb="20px">
+        <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
           <RiFileCopy2Line size="40px" />
           <Text color="gray" fontSize="17px" mt="20px">
             <b>Tax and Estate Planning </b>
@@ -607,7 +606,7 @@ export const Contact = () => {
       >
         <Box width={["90%", "90%", "60%", "60%"]} textAlign="center">
           <Box display="flex" justifyContent="center">
-            <Image src={laeimg} alt="Dan Abramov" maxWidth="500px" />
+            <Image src={laeimg} alt="Dan Abramov" maxWidth="400px" />
           </Box>
         </Box>
         <Box width={["90%", "90%", "40%", "40%"]}>
