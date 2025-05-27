@@ -8,9 +8,11 @@ import {
   MenuList,
   IconButton,
   Heading,
+  Image,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { HashLink as Link } from "react-router-hash-link";
+import logo from "../component/logo.jpeg";
 const NavBar = () => {
   //"#b4816b"
   return (
@@ -23,15 +25,7 @@ const NavBar = () => {
       <Box pl={6} pr={6} pt={5} pb={7}>
         <Flex>
           <Link to="/">
-            <Heading
-              size="md"
-              mt="13px"
-              _hover={{ color: "#b4816b" }}
-              _active={{ color: "#b4816b" }}
-              _focus={{ color: "#b4816b" }}
-            >
-              MORGAN & ASSOCIATES
-            </Heading>
+            <Image src={logo} />
           </Link>
 
           <Spacer />
