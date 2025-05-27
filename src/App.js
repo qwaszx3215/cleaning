@@ -15,20 +15,17 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import React from "react";
+import axios from "axios";
 import NavBar from "./component/navbar";
 import { HashLink as Link } from "react-router-hash-link";
 import { SiWorldhealthorganization } from "react-icons/si";
 import { BsBank2, BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
-import { RiFileCopy2Line } from "react-icons/ri";
-import { GiInjustice } from "react-icons/gi";
+
+import { FaShieldAlt, FaSmile, FaBroom } from "react-icons/fa";
 import { GoQuote } from "react-icons/go";
 import laeimg from "./newlaw.png";
 
-import {
-  MdCheckCircle,
-  MdFamilyRestroom,
-  MdOutlineGavel,
-} from "react-icons/md";
+import { MdCheckCircle } from "react-icons/md";
 import { BrowserRouter } from "react-router-dom";
 import Scroll6 from "./component/Scroll/scroll6";
 import Scroll4 from "./component/Scroll/Scroll4";
@@ -103,30 +100,31 @@ export default App;
 export const Home = () => {
   return (
     <Box
-      backgroundImage="url('./ladyjustice.jpg')"
+      bg="gray.100" // light background color
+      backgroundImage="url('https://www.houstoncleanconnections.com/wp-content/uploads/hero-row-banner-bg.webp')"
+      backgroundRepeat="no-repeat"
+      backgroundSize="contain" // or 'auto' based on your preference
+      backgroundPosition="right"
       height="100vh"
-      backgrounRrepeat="no-repeat"
-      backgroundSize="auto"
       pt="50px"
     >
-      <Box display={["grid", "grid", "flex", "flex"]} color="white">
+      <Box display={["grid", "grid", "flex", "flex"]}>
         <Box
           m="auto"
-          w={["400px", "400px", "70%", "70%"]}
-          p={["10px", "10px", "100px", "100px"]}
+          w={["400px", "400px", "50%", "50%"]}
+          py={["10px", "10px", "100px", "100px"]}
           pt={["150px", "150px", "100px", "100px"]}
           fontSize={["22px", "22px", "25px", "25px"]}
           mt="20px"
         >
-          <b>
-            <Scroll6>
-              MORGAN & ASSOCIATES is a highly reputable law firm that
-              specializes in highly complex immigration cases, Bankruptcy,
-              Criminal Law, Divorce and Family and more. They have attorneys in
-              three New York City locations, and their attorneys are licensed to
-              practice immigration law in all 50 U.S. states.{" "}
-            </Scroll6>
-          </b>
+          <Scroll6>
+            <Heading color="#7bdcb5">
+              For a Fresh, Welcoming Home House Cleaning Services
+            </Heading>
+            We’re here to add that extra sparkle to your everyday life, giving
+            you back the time you deserve to do the things that truly make you
+            happy.
+          </Scroll6>
         </Box>
         <Box m="auto" w="30%" d={["none", "none", "grid", "grid"]}></Box>
       </Box>
@@ -137,82 +135,66 @@ export const Service = () => {
   return (
     <Box m="60px" mt="-80px" pb="80px">
       <Heading size="lg" mb="30px">
-        Full-service legal solutions
+        Our Cleaning Services
       </Heading>
       <Box display="flex" justifyContent="space-between" flexWrap="wrap">
         <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
-          <SiWorldhealthorganization size="40px" />
-          <Text color="gray" fontSize="17px" mt="20px">
-            <b> Immigration Cases</b>
+          <Text fontSize="20px" fontWeight="bold">
+            Kitchen Appliance Cleaning
           </Text>
-          <Text fontSize="12px" pr="20px">
-            We play a critical role in helping individuals and companies
-            navigate the complex US immigration system and ensuring that their
-            clients' legal rights are protected. assist with filling out and
-            submitting the necessary immigration forms and supporting
-            documentation
+          <Text fontSize="12px" pr="20px" mt="10px">
+            Deep cleaning of your oven, refrigerator, microwave, and other
+            kitchen appliances to eliminate grease, grime, and food residues.
           </Text>
         </Box>
+
         <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
-          <BsBank2 size="40px" />
-          <Text color="gray" fontSize="17px" mt="20px">
-            <b> Bankruptcy</b>
+          <Text fontSize="20px" fontWeight="bold">
+            Tile and Grout Cleaning
           </Text>
-          <Text fontSize="12px" pr="20px">
-            We play a critical role in helping individuals and companies
-            navigate the complex US immigration system and ensuring that their
-            clients' legal rights are protected. assist with filling out and
-            submitting the necessary immigration forms and supporting
-            documentation
+          <Text fontSize="12px" pr="20px" mt="10px">
+            Restore the sparkle of your tiles and remove dirt and mold from
+            grout lines with our powerful cleaning solutions.
           </Text>
         </Box>
+
         <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
-          <GiInjustice size="40px" />
-          <Text color="gray" fontSize="17px" mt="20px">
-            <b> Criminal Law</b>
+          <Text fontSize="20px" fontWeight="bold">
+            Maid Service
           </Text>
-          <Text fontSize="12px" pr="20px">
-            We play Investigate and build a defense, Represent clients in court,
-            Assist with appeals Overall, we play a critical role in protecting
-            their clients' rights and ensuring a fair and just criminal justice
-            system. They provide legal advice, representation, and protection to
-            clients throughout the criminal justice process
+          <Text fontSize="12px" pr="20px" mt="10px">
+            Reliable and thorough maid services to keep your home clean and
+            organized on a regular or one-time basis.
           </Text>
         </Box>
+
         <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
-          <MdFamilyRestroom size="40px" />
-          <Text color="gray" fontSize="17px" mt="20px">
-            <b>Divorce and Family Cases</b>
+          <Text fontSize="20px" fontWeight="bold">
+            Move In & Move Out Cleaning
           </Text>
-          <Text fontSize="12px" pr="20px">
-            We play a critical roleplay a critical role in helping clients
-            navigate the complex and emotionally charged process of divorce and
-            other family law matters. They provide legal advice, representation,
-            and protection to clients throughout the legal process
+          <Text fontSize="12px" pr="20px" mt="10px">
+            Professional cleaning for homes during relocation to ensure a
+            spotless space for new occupants or to get your deposit back.
           </Text>
         </Box>
+
         <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
-          <MdOutlineGavel size="40px" />
-          <Text color="gray" fontSize="17px" mt="20px">
-            <b>Arbitration and Mediation </b>
+          <Text fontSize="20px" fontWeight="bold">
+            Deep House Cleaning
           </Text>
-          <Text fontSize="12px" pr="20px">
-            We play a critical role in helping clients resolve legal disputes
-            outside of the courtroom through alternative dispute resolution
-            methods. They provide legal advice, representation, and facilitation
-            to clients throughout the mediation or arbitration process.
+          <Text fontSize="12px" pr="20px" mt="10px">
+            A comprehensive cleaning of every corner of your home, ideal for
+            seasonal refreshes or after events.
           </Text>
         </Box>
+
         <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
-          <RiFileCopy2Line size="40px" />
-          <Text color="gray" fontSize="17px" mt="20px">
-            <b>Tax and Estate Planning </b>
+          <Text fontSize="20px" fontWeight="bold">
+            Carpet Cleaning
           </Text>
-          <Text fontSize="12px" pr="20px">
-            We play a critical role in helping clients plan for their financial
-            future and protect their assets. They provide legal advice,
-            representation, and protection to clients on matters related to tax
-            law and estate planning.
+          <Text fontSize="12px" pr="20px" mt="10px">
+            Effective carpet cleaning using modern techniques to remove stains,
+            allergens, and revive your carpet’s look and feel.
           </Text>
         </Box>
       </Box>
@@ -229,9 +211,10 @@ export const Profile = () => {
     <>
       <Box bg="#eceff2" p="60px">
         <Heading size="lg" mb="60px">
-          Onboard lawyers Profile
+          For Professional House Cleaning
         </Heading>
         <Box display="flex" justifyContent="space-between" flexWrap="wrap">
+          {/* Reliable & Fully Insured */}
           <Box
             maxW="md"
             mb="50px"
@@ -239,27 +222,26 @@ export const Profile = () => {
             bg="white"
             p="20px"
             borderRadius="8px"
+            boxShadow="md"
           >
-            <Flex spacing="4" mb="40px">
-              <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-                <Avatar
-                  name="Craig F. Arcella"
-                  src="https://randomuser.me/api/portraits/men/8.jpg"
-                />
-
-                <Box>
-                  <Heading size="sm">Craig F. Arcella, Partner</Heading>
-                  <Text>Tax</Text>
-                  <Text>carcella@cravath.com</Text>
-                </Box>
-              </Flex>
+            <Flex mb="30px" gap="4" alignItems="center">
+              <FaShieldAlt size="30px" color="#3182ce" />
+              <Box>
+                <Heading size="sm">Reliable & Fully Insured</Heading>
+                <Text fontSize="sm" color="gray.500">
+                  Trusted Cleaning Experience
+                </Text>
+              </Box>
             </Flex>
-
-            <Text>
-              EDUCATION J.D., 1998, Columbia Law School Harlan Fiske Stone
-              Scholar B.A., 1995, Duke University
+            <Text fontSize="14px">
+              We’ve been trusted to bring a sense of calm and cleanliness to
+              homes, making sure you walk into a space that feels just right.
+              With our trained, insured, and licensed professionals, your home
+              is in safe hands—cleaned exactly the way you like it.
             </Text>
           </Box>
+
+          {/* Honest Prices, Happy People */}
           <Box
             maxW="md"
             mb="50px"
@@ -267,27 +249,25 @@ export const Profile = () => {
             bg="white"
             p="20px"
             borderRadius="8px"
+            boxShadow="md"
           >
-            <Flex spacing="4" mb="40px">
-              <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-                <Avatar
-                  name="Craig F. Arcella"
-                  src="https://randomuser.me/api/portraits/men/8.jpg"
-                />
-
-                <Box>
-                  <Heading size="sm">Craig F. Arcella, Partner</Heading>
-                  <Text>Tax</Text>
-                  <Text>carcella@cravath.com</Text>
-                </Box>
-              </Flex>
+            <Flex mb="30px" gap="4" alignItems="center">
+              <FaSmile size="30px" color="#38a169" />
+              <Box>
+                <Heading size="sm">Honest Prices, Happy People</Heading>
+                <Text fontSize="sm" color="gray.500">
+                  Quality & Trust in Every Step
+                </Text>
+              </Box>
             </Flex>
-
-            <Text>
-              EDUCATION J.D., 1998, Columbia Law School Harlan Fiske Stone
-              Scholar B.A., 1995, Duke University
+            <Text fontSize="14px">
+              Every team member is carefully screened, trained, and insured to
+              provide you peace of mind. We send only the best into your home,
+              ensuring the job is always done with precision and care.
             </Text>
           </Box>
+
+          {/* Your Cleanest Space, Every Time */}
           <Box
             maxW="md"
             mb="50px"
@@ -295,148 +275,54 @@ export const Profile = () => {
             bg="white"
             p="20px"
             borderRadius="8px"
+            boxShadow="md"
           >
-            <Flex spacing="4" mb="40px">
-              <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-                <Avatar
-                  name="Craig F. Arcella"
-                  src="https://randomuser.me/api/portraits/men/8.jpg"
-                />
-
-                <Box>
-                  <Heading size="sm">Craig F. Arcella, Partner</Heading>
-                  <Text>Tax</Text>
-                  <Text>carcella@cravath.com</Text>
-                </Box>
-              </Flex>
+            <Flex mb="30px" gap="4" alignItems="center">
+              <FaBroom size="30px" color="#d69e2e" />
+              <Box>
+                <Heading size="sm">Your Cleanest Space, Every Time</Heading>
+                <Text fontSize="sm" color="gray.500">
+                  Taking Care of Our People – You
+                </Text>
+              </Box>
             </Flex>
-
-            <Text>
-              EDUCATION J.D., 1998, Columbia Law School Harlan Fiske Stone
-              Scholar B.A., 1995, Duke University
-            </Text>
-          </Box>
-          <Box
-            maxW="md"
-            mb="50px"
-            border="1px solid transparent"
-            bg="white"
-            p="20px"
-            borderRadius="8px"
-          >
-            <Flex spacing="4" mb="40px">
-              <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-                <Avatar
-                  name="Craig F. Arcella"
-                  src="https://randomuser.me/api/portraits/men/8.jpg"
-                />
-
-                <Box>
-                  <Heading size="sm">Craig F. Arcella, Partner</Heading>
-                  <Text>Tax</Text>
-                  <Text>carcella@cravath.com</Text>
-                </Box>
-              </Flex>
-            </Flex>
-
-            <Text>
-              EDUCATION J.D., 1998, Columbia Law School Harlan Fiske Stone
-              Scholar B.A., 1995, Duke University
-            </Text>
-          </Box>
-          <Box
-            maxW="md"
-            mb="50px"
-            border="1px solid transparent"
-            bg="white"
-            p="20px"
-            borderRadius="8px"
-          >
-            <Flex spacing="4" mb="40px">
-              <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-                <Avatar
-                  name="Craig F. Arcella"
-                  src="https://randomuser.me/api/portraits/men/8.jpg"
-                />
-
-                <Box>
-                  <Heading size="sm">Craig F. Arcella, Partner</Heading>
-                  <Text>Tax</Text>
-                  <Text>carcella@cravath.com</Text>
-                </Box>
-              </Flex>
-            </Flex>
-
-            <Text>
-              EDUCATION J.D., 1998, Columbia Law School Harlan Fiske Stone
-              Scholar B.A., 1995, Duke University
-            </Text>
-          </Box>
-          <Box
-            maxW="md"
-            mb="50px"
-            border="1px solid transparent"
-            bg="white"
-            p="20px"
-            borderRadius="8px"
-          >
-            <Flex spacing="4" mb="40px">
-              <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-                <Avatar
-                  name="Craig F. Arcella"
-                  src="https://randomuser.me/api/portraits/men/8.jpg"
-                />
-
-                <Box>
-                  <Heading size="sm">Craig F. Arcella, Partner</Heading>
-                  <Text>Tax</Text>
-                  <Text>carcella@cravath.com</Text>
-                </Box>
-              </Flex>
-            </Flex>
-
-            <Text>
-              EDUCATION J.D., 1998, Columbia Law School Harlan Fiske Stone
-              Scholar B.A., 1995, Duke University
+            <Text fontSize="14px">
+              When we value and support our team, they bring their best to your
+              home. That’s why we foster a culture of care so that our employees
+              deliver cleaning with heart — consistently and reliably.
             </Text>
           </Box>
         </Box>
       </Box>
 
       <Box
-        backgroundImage="url('./mainwe.png')"
+        backgroundImage="url('https://burst.shopifycdn.com/photos/cleaning-supply-flatlay-bottom.jpg?width=1000&format=pjpg&exif=0&iptc=0')" // Make sure the image path is valid
         height={["100vh", "100vh", "70vh", "70vh"]}
         backgroundRepeat="no-repeat"
-        backgroundSize="auto"
+        backgroundSize="cover"
         backgroundPosition="center"
         p="80px"
       >
-        <Heading size="lg" mb="30px" color="white">
-          Why work with us
+        <Heading size="lg" mb="30px">
+          Why Choose Us
         </Heading>
         <Scroll4>
-          <List
-            spacing={6}
-            fontSize="20px"
-            fontWeight="700"
-            mt="-60px"
-            color="white"
-          >
+          <List spacing={6} fontSize="20px" fontWeight="700" mt="-60px">
             <ListItem>
-              <ListIcon as={MdCheckCircle} color="#b4816b" />
-              We know and understand the law
+              <ListIcon as={MdCheckCircle} color="#8ed1fc" />
+              Trusted by Hundreds of Families
             </ListItem>
             <ListItem>
-              <ListIcon as={MdCheckCircle} color="#b4816b" />
-              We have decades of legal experience
+              <ListIcon as={MdCheckCircle} color="#8ed1fc" />
+              Professionally Trained & Insured Cleaners
             </ListItem>
             <ListItem>
-              <ListIcon as={MdCheckCircle} color="#b4816b" />
-              We are your advocate
+              <ListIcon as={MdCheckCircle} color="#8ed1fc" />
+              Eco-Friendly Cleaning Products
             </ListItem>
             <ListItem>
-              <ListIcon as={MdCheckCircle} color="#b4816b" />
-              We provide the counsel you need
+              <ListIcon as={MdCheckCircle} color="#8ed1fc" />
+              Flexible Scheduling That Works for You
             </ListItem>
           </List>
           <Link to="testimony" scroll={(el) => scrollWithOffset(el, -150)}>
@@ -447,11 +333,11 @@ export const Profile = () => {
               color="white"
               borderRadius="10px"
               p="20px"
-              _hover={{ background: "#b4816b", border: "2px solid #b4816b" }}
-              _active={{ background: "#b4816b", border: "2px solid #b4816b" }}
-              _focus={{ background: "#b4816b", border: "2px solid #b4816b" }}
+              _hover={{ background: "#8ed1fc", border: "2px solid #8ed1fc" }}
+              _active={{ background: "#8ed1fc", border: "2px solid #8ed1fc" }}
+              _focus={{ background: "#8ed1fc", border: "2px solid #8ed1fc" }}
             >
-              Book a consultation
+              Book a Cleaning
             </Button>
           </Link>
         </Scroll4>
@@ -465,7 +351,7 @@ export const Testimonials = () => {
       <Box
         p={["10px", "10px", "80px", "80px"]}
         pt="40px"
-        bg="#b4816b"
+        bg="#8ed1fc"
         color="white"
         pb="30px"
         mt={["-45px", "-45px", "0", "0"]}
@@ -498,44 +384,43 @@ export const Testimonials = () => {
               <ListItem display="flex" mt="50px">
                 <GoQuote size="40px" color="#724e3f" />
                 <p style={{ marginTop: "20px" }}>
-                  Matt Cadwell helped me finish a long time case I’ve been
-                  trying to wrap up for years. He was completely understanding,
-                  professional and worked very diligently to the end and I’m so
-                  grateful! Highly recommend!!
-                  <br></br>
-                  <b> -KIMBERLY</b>
+                  I can’t believe how spotless my home looked after the first
+                  cleaning. The team was on time, friendly, and incredibly
+                  thorough. I finally have weekends to myself again!
+                  <br />
+                  <b>-JESSICA</b>
                 </p>
               </ListItem>
               <ListItem display="flex">
                 <GoQuote size="40px" color="#724e3f" />
                 <p style={{ marginTop: "20px" }}>
-                  Our lawyer, Matt, was outstanding. Calm, patient, reasonable
-                  in the turmoil we were going through. We would definitely use
-                  Boyd Law again although we hope not to have .<br></br>
-                  <b>-CATHERINE </b>
+                  After trying several cleaning services, this one truly stands
+                  out. They were respectful of our home and went above and
+                  beyond in every room. It’s like a breath of fresh air!
+                  <br />
+                  <b>-MARCUS</b>
                 </p>
               </ListItem>
               <ListItem display="flex">
                 <GoQuote size="40px" color="#724e3f" />
                 <p style={{ marginTop: "20px" }}>
-                  We highly recommend MORGAN & ASSOCIATES Firm... they are truly
-                  professional and "results' oriented"... Our publishing company
-                  is at ease knowing they have our back!
-                  <br></br>
-                  <b>-Mary </b>
+                  The team was fantastic—punctual, professional, and detailed.
+                  They even left a small thank-you note. I’ve signed up for
+                  bi-weekly service now. Highly recommend!
+                  <br />
+                  <b>-LISA</b>
                 </p>
               </ListItem>
               <ListItem display="flex">
                 <GoQuote size="40px" color="#724e3f" />
                 <p style={{ marginTop: "20px" }}>
-                  You all have been phenomenal in this case. I appreciate every
-                  effort you all have put in to this to have the truth be seen
-                  in court. I believe we made history, as I have legal rights to
-                  my daughter.
-                  <br></br>
-                  <b> -Baba</b>
+                  My house has never felt so clean. I appreciated the
+                  eco-friendly products and the care they took with my pets
+                  around. Truly a 5-star experience.
+                  <br />
+                  <b>-DANIEL</b>
                 </p>
-              </ListItem>{" "}
+              </ListItem>
             </Scroll4>
           </List>
         </Box>
@@ -544,17 +429,44 @@ export const Testimonials = () => {
   );
 };
 export const Book = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Submitted Booking:", formData);
+
+    try {
+      await axios.post("https://secondwa.onrender.com/sendmail7", formData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Box
+      as="form"
+      onSubmit={handleSubmit}
       m="auto"
       width={["90%", "90%", "60%", "60%"]}
       textAlign="center"
       mt="40px"
     >
-      <Heading size="lg"> HOW CAN WE HELP YOU?</Heading>
+      <Heading size="lg">BOOK A CLEANING SESSION</Heading>
       <Heading size="sm" color="#724e3f">
-        FILL OUT THE FORM BELOW FOR A NO-OBLIGATION REVIEW OF YOUR CASE
+        FILL OUT THE FORM TO SCHEDULE YOUR SERVICE
       </Heading>
+
       <Box
         display={["grid", "grid", "flex", "flex"]}
         justifyContent="space-between"
@@ -564,18 +476,23 @@ export const Book = () => {
           type="text"
           variant="flushed"
           placeholder="First Name"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleChange}
           m="30px"
-          name="name"
         />
         <Input
-          type="email"
           isRequired
+          type="text"
           variant="flushed"
           placeholder="Last Name"
-          name="email"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleChange}
           m="30px"
         />
       </Box>
+
       <Box
         display={["grid", "grid", "flex", "flex"]}
         justifyContent="space-between"
@@ -585,30 +502,37 @@ export const Book = () => {
           type="text"
           variant="flushed"
           placeholder="Phone Number"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
           m="30px"
-          name="name"
         />
         <Input
-          type="email"
           isRequired
+          type="email"
           variant="flushed"
-          placeholder="EMAIL ADDRESS"
+          placeholder="Email Address"
           name="email"
+          value={formData.email}
+          onChange={handleChange}
           m="30px"
         />
       </Box>
 
       <Textarea
-        type="text"
         isRequired
         variant="flushed"
+        placeholder="Tell us about your cleaning needs"
         name="message"
-        placeholder="description of your case"
+        value={formData.message}
+        onChange={handleChange}
         mb="30px"
         w="95%"
       />
+
       <Box textAlign="center">
         <Button
+          type="submit"
           bg="transparent"
           border="2px solid black"
           color="black"
@@ -632,7 +556,7 @@ export const Book = () => {
           fontWeight="100"
           fontSize={["15px", "15px", "", ""]}
         >
-          Submit Your Case
+          Book Now
         </Button>
       </Box>
     </Box>
@@ -641,17 +565,15 @@ export const Book = () => {
 export const Contact = () => {
   return (
     <>
-      <Flex
-        display="flex"
-        flexWrap="wrap"
-        bg="black"
-        color="white"
-        mt="40px"
-        p="40px"
-      >
+      <Flex display="flex" flexWrap="wrap" mt="40px" p="40px">
         <Box width={["90%", "90%", "60%", "60%"]} textAlign="center">
           <Box display="flex" justifyContent="center">
-            <Image src={laeimg} alt="Dan Abramov" maxWidth="400px" />
+            <Image
+              mt="90px"
+              src="https://atriainnovation.com/uploads/2023/11/Portada_3.jpg"
+              alt="Dan Abramov"
+              maxWidth="400px"
+            />
           </Box>
         </Box>
         <Box width={["90%", "90%", "40%", "40%"]}>
@@ -661,11 +583,11 @@ export const Contact = () => {
           <Text fontSize="20px" fontWeight="600" color="#b4816b">
             Phone
           </Text>
-          <Text mb="20px"> (123) 456-7890</Text>
+          <Text mb="20px"> (317) 572-0238</Text>
           <Text fontSize="20px" fontWeight="600" color="#b4816b">
             Email
           </Text>
-          <Text mb="20px"> hello@morgan&associate.com</Text>
+          <Text mb="20px"> theodoreemagilll@gmail.com</Text>
           <Text fontSize="20px" fontWeight="600" color="#b4816b">
             Social
           </Text>
@@ -689,17 +611,11 @@ export const Contact = () => {
               icon={<BsLinkedin fontSize="1.25rem" />}
             />
           </ButtonGroup>
-
-          <Text fontSize="12px">
-            Milcheur Law is an accessible<br></br>
-            workplace. Persons with<br></br>
-            disabilities are welcome to apply.
-          </Text>
         </Box>
       </Flex>
       <Text fontSize="sm" bg="black" color="white" textAlign="center">
-        &copy; {new Date().getFullYear()} MORGAN & ASSOCIATES, Inc. All rights
-        reserved.
+        &copy; {new Date().getFullYear()} Theodoreema Gilll Cleaning, Inc. All
+        rights reserved.
       </Text>
     </>
   );

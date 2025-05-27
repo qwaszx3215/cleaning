@@ -12,20 +12,15 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { HashLink as Link } from "react-router-hash-link";
-import logo from "../component/logo.jpeg";
+import logo from "../component/logo.png";
 const NavBar = () => {
   //"#b4816b"
   return (
-    <Box
-      bg={"RGBA(0, 0, 0, 0.64)"}
-      position="absolute"
-      color="white"
-      width="100%"
-    >
+    <Box bg={"#8ed1fc"} color="black" width="100%">
       <Box pl={6} pr={6} pt={5} pb={7}>
         <Flex>
           <Link to="/">
-            <Image src={logo} />
+            <Image mt="-40px" mb="-50px" h="150px" w="150px" src={logo} />
           </Link>
 
           <Spacer />
@@ -74,9 +69,9 @@ export const Lister = ({ name, fw, link }) => {
     <Link to={link} scroll={(el) => scrollWithOffset(el, -150)}>
       <Button
         bg="transparent"
-        _hover={{ color: "#b4816b" }}
-        _active={{ color: "#b4816b" }}
-        _focus={{ color: "#b4816b" }}
+        _hover={{ color: "#7bdcb5" }}
+        _active={{ color: "#7bdcb5" }}
+        _focus={{ color: "#7bdcb5" }}
         fontWeight={fw}
       >
         {name}
