@@ -640,7 +640,7 @@ export const Contact = () => {
         </Box>
       </Flex>
       <Text fontSize="sm" bg="black" color="white" textAlign="center">
-        &copy; {new Date().getFullYear()} Theodoreema Gilll Cleaning, Inc. All
+        &copy; {new Date().getFullYear()} Theodorema Gilll Cleaning, Inc. All
         rights reserved.
       </Text>
     </>
