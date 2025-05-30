@@ -42,7 +42,7 @@ const NavBar = () => {
                 variant="outline"
               />
 
-              <MenuList bg="black" zIndex="999999" display="grid">
+              <MenuList   zIndex="999999" display="grid">
                 <Lister name="Service" link="#service" />
                 <Lister name="Contact" link="#contact" />
                 <Lister name="Book Consulation" link="#book" />
