@@ -100,30 +100,38 @@ export default App;
 export const Home = () => {
   return (
     <Box
-      bg="gray.100" // light background color
-      backgroundImage="url('https://www.houstoncleanconnections.com/wp-content/uploads/hero-row-banner-bg.webp')"
+      bg="gray.100"
+      backgroundImage={[
+        "",
+        "",
+        "url('https://www.houstoncleanconnections.com/wp-content/uploads/hero-row-banner-bg.webp')",
+        "url('https://www.houstoncleanconnections.com/wp-content/uploads/hero-row-banner-bg.webp')",
+        "url('https://www.houstoncleanconnections.com/wp-content/uploads/hero-row-banner-bg.webp')",
+        "url('https://www.houstoncleanconnections.com/wp-content/uploads/hero-row-banner-bg.webp')",
+      ]}
       backgroundRepeat="no-repeat"
       backgroundSize="contain" // or 'auto' based on your preference
       backgroundPosition="right"
-      height="100vh"
+      height={["auto", "auto", "100vh", "100vh", "100vh", "100vh"]}
       pt="50px"
     >
       <Box display={["grid", "grid", "flex", "flex"]}>
         <Box
           m="auto"
           w={["400px", "400px", "50%", "50%"]}
-          py={["10px", "10px", "100px", "100px"]}
-          pt={["150px", "150px", "100px", "100px"]}
+          py={["50px", "50px", "100px", "100px"]}
           fontSize={["22px", "22px", "25px", "25px"]}
-          mt="20px"
         >
           <Scroll6>
             <Heading color="#7bdcb5">
-              For a Fresh, Welcoming Home House Cleaning Services
+              For a Fresh, Welcoming House Cleaning Services in Florida
             </Heading>
             We’re here to add that extra sparkle to your everyday life, giving
             you back the time you deserve to do the things that truly make you
             happy.
+            <br />
+            <br />
+            You can trust us with taking care of those unwanted stains
           </Scroll6>
         </Box>
         <Box m="auto" w="30%" d={["none", "none", "grid", "grid"]}></Box>
@@ -195,6 +203,24 @@ export const Service = () => {
           <Text fontSize="12px" pr="20px" mt="10px">
             Effective carpet cleaning using modern techniques to remove stains,
             allergens, and revive your carpet’s look and feel.
+          </Text>
+        </Box>
+        <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
+          <Text fontSize="20px" fontWeight="bold">
+            Post Construction Cleaning
+          </Text>
+          <Text fontSize="12px" pr="20px" mt="10px">
+            Thorough cleaning after construction or renovation to remove dust,
+            debris, and leftover materials.
+          </Text>
+        </Box>
+        <Box w={["100%", "100%", "400px", "400px"]} mb="20px">
+          <Text fontSize="20px" fontWeight="bold">
+            Window Cleaning
+          </Text>
+          <Text fontSize="12px" pr="20px" mt="10px">
+            Interior and exterior window washing for a streak-free shine and
+            improved natural light.
           </Text>
         </Box>
       </Box>
@@ -325,7 +351,7 @@ export const Profile = () => {
               Flexible Scheduling That Works for You
             </ListItem>
           </List>
-          <Link to="testimony" scroll={(el) => scrollWithOffset(el, -150)}>
+          <Link to="#book" scroll={(el) => scrollWithOffset(el, -150)}>
             <Button
               mt="20px"
               bg="transparent"
@@ -594,21 +620,9 @@ export const Contact = () => {
           <ButtonGroup variant="ghost" mb="30px">
             <IconButton
               as="a"
-              href="#"
-              aria-label="LinkedIn"
-              icon={<BsTwitter fontSize="1.25rem" />}
-            />
-            <IconButton
-              as="a"
-              href="#"
+              href="https://www.facebook.com/share/162P3kBgAd/?mibextid=wwXIfr"
               aria-label="GitHub"
               icon={<BsFacebook fontSize="1.25rem" />}
-            />
-            <IconButton
-              as="a"
-              href="#"
-              aria-label="Twitter"
-              icon={<BsLinkedin fontSize="1.25rem" />}
             />
           </ButtonGroup>
         </Box>
