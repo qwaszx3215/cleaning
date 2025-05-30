@@ -24,6 +24,7 @@ import { BsBank2, BsFacebook, BsLinkedin, BsTwitter } from "react-icons/bs";
 import { FaShieldAlt, FaSmile, FaBroom } from "react-icons/fa";
 import { GoQuote } from "react-icons/go";
 import laeimg from "./newlaw.png";
+import { Typewriter } from "react-simple-typewriter";
 
 import { MdCheckCircle } from "react-icons/md";
 import { BrowserRouter } from "react-router-dom";
@@ -99,7 +100,7 @@ function App() {
 export default App;
 export const Home = () => {
   return (
-     <Box
+    <Box
       bg="gray.100"
       backgroundImage="url('https://www.houstoncleanconnections.com/wp-content/uploads/hero-row-banner-bg.webp')"
       backgroundRepeat="no-repeat"
@@ -125,7 +126,17 @@ export const Home = () => {
         >
           <Scroll6>
             <Heading color="#7bdcb5">
-             For fresh, welcoming house cleaning services statewide in Florida
+              <Typewriter
+                words={[
+                  "For Fresh, Helcoming House Cleaning Services Statewide in Florida",
+                ]}
+                loop={false}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
             </Heading>
             We’re here to add that extra sparkle to your everyday life, giving
             you back the time you deserve to do the things that truly make you
