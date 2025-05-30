@@ -99,19 +99,19 @@ function App() {
 export default App;
 export const Home = () => {
   return (
-    <Box
+     <Box
       bg="gray.100"
-      backgroundImage={[
-        "",
-        "",
-        "url('https://www.houstoncleanconnections.com/wp-content/uploads/hero-row-banner-bg.webp')",
-        "url('https://www.houstoncleanconnections.com/wp-content/uploads/hero-row-banner-bg.webp')",
-        "url('https://www.houstoncleanconnections.com/wp-content/uploads/hero-row-banner-bg.webp')",
-        "url('https://www.houstoncleanconnections.com/wp-content/uploads/hero-row-banner-bg.webp')",
-      ]}
+      backgroundImage="url('https://www.houstoncleanconnections.com/wp-content/uploads/hero-row-banner-bg.webp')"
       backgroundRepeat="no-repeat"
       backgroundSize="contain" // or 'auto' based on your preference
-      backgroundPosition="right"
+      backgroundPosition={[
+        "bottom",
+        "bottom",
+        "right",
+        "right",
+        "right",
+        "right",
+      ]}
       height={["auto", "auto", "100vh", "100vh", "100vh", "100vh"]}
       pt="50px"
     >
@@ -120,6 +120,7 @@ export const Home = () => {
           m="auto"
           w={["400px", "400px", "50%", "50%"]}
           py={["50px", "50px", "100px", "100px"]}
+          pb={["300px", "300px", "100px", "100px"]}
           fontSize={["22px", "22px", "25px", "25px"]}
         >
           <Scroll6>
