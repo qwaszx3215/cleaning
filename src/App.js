@@ -125,7 +125,7 @@ export const Home = () => {
         >
           <Scroll6>
             <Heading color="#7bdcb5">
-              For a Fresh, Welcoming House Cleaning Services in Florida
+             For fresh, welcoming house cleaning services statewide in Florida
             </Heading>
             We’re here to add that extra sparkle to your everyday life, giving
             you back the time you deserve to do the things that truly make you
