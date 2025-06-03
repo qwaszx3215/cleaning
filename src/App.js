@@ -621,7 +621,7 @@ export const Contact = () => {
           <Text fontSize="20px" fontWeight="600" color="#b4816b">
             Phone
           </Text>
-          <Text mb="20px"> (317) 572-0238</Text>
+          <Text mb="20px">(754) 215-7114</Text>
           <Text fontSize="20px" fontWeight="600" color="#b4816b">
             Email
           </Text>
